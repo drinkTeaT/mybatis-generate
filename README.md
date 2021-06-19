@@ -1,5 +1,5 @@
 TableInfo控制注解和DTO生成
-
+MyGenerator生成
 ### 安装
 ``` xml
 <dependency>
