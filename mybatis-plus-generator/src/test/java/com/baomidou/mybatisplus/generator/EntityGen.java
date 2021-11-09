@@ -46,6 +46,7 @@ public class EntityGen{
                 .enableLombok()
                 .build());
         autoGenerator.execute();
+        System.out.println("finish!!!");
     }
 
 

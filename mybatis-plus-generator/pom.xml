@@ -3,9 +3,9 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>club.baomidou</groupId>
-    <artifactId>mybatis-plus-generator1</artifactId>
-    <version>3.5.0</version>
+    <groupId>clubtacbin</groupId>
+    <artifactId>mybatis-plus-generator</artifactId>
+    <version>3.5.0.snapshots</version>
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -119,4 +119,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://repo.rdc.aliyun.com/repository/138149-release-dy6ueQ/</url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url>https://repo.rdc.aliyun.com/repository/138149-snapshot-zYoNiF/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
