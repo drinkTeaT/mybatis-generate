@@ -17,7 +17,7 @@ import java.util.HashSet;
 public class EntityGen{
     public static final String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
     public static final String username = "root";
-    public static final String password = "";
+    public static final String password = "tacbin@123";
 
     public static void main(String[] args) {
         String projectPath = System.getProperty("user.dir");
