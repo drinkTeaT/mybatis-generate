@@ -1,0 +1,13 @@
+package dto
+
+type ${entity} struct {
+Token        string `json:"token"`
+UserId       uint64 `json:"user_id"`
+SpcClientId string `json:"spc_client_id"`
+
+
+#foreach($field in ${table.fields})
+    ${field.propertyName.substring(0,1).toUpperCase()}${field.propertyName.substring(1)}      ${field.type}  `json:"${field.annotationColumnName}"`
+#end
+
+}

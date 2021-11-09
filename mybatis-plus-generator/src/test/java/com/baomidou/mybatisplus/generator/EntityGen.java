@@ -2,6 +2,7 @@ package com.baomidou.mybatisplus.generator;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.builder.GeneratorBuilder;
 import com.baomidou.mybatisplus.generator.config.po.TableField;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
@@ -15,9 +16,9 @@ import java.util.HashSet;
  * @date: 2021-10-30
  **/
 public class EntityGen{
-    public static final String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
+    public static final String url = "jdbc:mysql://localhost:3306/task_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC";
     public static final String username = "root";
-    public static final String password = "";
+    public static final String password = "123456";
 
     public static void main(String[] args) {
         String projectPath = System.getProperty("user.dir");
@@ -31,12 +32,12 @@ public class EntityGen{
                 .outputDir(projectPath + "/gen")
                 .build())
             .packageInfo(new PackageConfig.Builder()
-                .moduleName("sjsc")
+                .moduleName("")
                 .entity("persistence..entity")
                 .mapper("persistence..mapper")
                 .xml("")
                 .controller("web.controller")
-                .parent("com")
+                .parent("")
                 .build())
             .strategy(new StrategyConfig.Builder()
                 .enableSkipView()
@@ -44,7 +45,7 @@ public class EntityGen{
                 .nameConvert(new MyNameConverter())
                 .convertFileName(new MyFileNameConverter())
                 .enableLombok()
-                .build());
+                .build()).template(GeneratorBuilder.templateConfigBuilder().entity("entity.go.vm").mapper("dto.go.vm").build());
         autoGenerator.execute();
     }
 
@@ -68,7 +69,7 @@ private static class MyFileNameConverter implements ConverterFileName {
 
     @Override
     public String convert(String entityName) {
-        return entityName + "DTO";
+        return entityName.replace("Tab","");
     }
 }
 }
